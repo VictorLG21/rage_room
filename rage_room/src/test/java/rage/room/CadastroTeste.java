@@ -21,12 +21,12 @@ public class CadastroTeste {
         int DIA, MES, ANO;
 
 
-        NOME = "Zé Carvalho";
-        PROFISSAO = "AUXILIAR DE GENTE GRANDE";
-        RG = "232345456";
-        DIA = 5;
+        NOME = "SANDRA PUGA";
+        PROFISSAO = "EXCELENTE PROFESSORA DE QUALIDADE DE SOFTWARE";
+        RG = "232345455";
+        DIA = 19;
         MES = 03;
-        ANO = 2003;
+        ANO = 1990;
 
 
         assertTrue("NOME INVÁLIDO!", Cliente.validarNome(NOME));
