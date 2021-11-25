@@ -52,4 +52,24 @@ public class Agendamento {
         }
         return false;
     }
+    public static boolean excluirAgendamento(List<Agendamento> agendamentos,int dia, int mes, int ano, int sala) {
+        
+        for (int j = 0; j < agendamentos.size(); j++) {
+            
+         
+              if(agendamentos.get(j).dia == dia && agendamentos.get(j).ano == ano && agendamentos.get(j).mes == mes && agendamentos.get(j).sala == sala){
+                agendamentos.remove(j);  
+                return true;
+              }
+          }
+          
+          return false;
+      }
+    public static boolean validarMotivo(String motivo) {
+        if(motivo.length()>200 || motivo.length() <8){ 
+            return false;
+        }
+       return true;
+    }
+    
 }
