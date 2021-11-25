@@ -71,5 +71,11 @@ public class Agendamento {
         }
        return true;
     }
+    public static boolean validarObj(List<String> objt, int objs) {
+if (objt.size() < objs || objs < 0 ) {
+    return false;
+}
+ return true;       
+    }
     
 }

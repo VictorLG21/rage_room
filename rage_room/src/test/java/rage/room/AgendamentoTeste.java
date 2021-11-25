@@ -146,5 +146,50 @@ public class AgendamentoTeste {
 
         assertTrue("Motivo INVÁLIDO!", Agendamento.validarMotivo(motivo));
     }
+    
+    @Test
+    public void validarObj() throws Exception {
+        boolean obj = true;
+        int objs = 4;
+        List<String> objt = new ArrayList<>();
+        objt.add("Martelo");
+        objt.add("Marreta");
+        objt.add("Machado");
+        objt.add("PC");
+        objt.add("foto da sogra");
+        if(obj){
+            System.out.println("Escolha o objeto a ser levado!");
+            for(int i = 0;i<objt.size();i++){
+                System.out.println(i + ". " + objt.get(i));
+            }
+        assertTrue("Objeto INVÁLIDO!", Agendamento.validarObj(objt,objs));
+        System.out.println("Objeto Levado: " + objt.get(objs));
+    }
+
+
+    
+}
+    @Test
+    public void validarObjFracasso() throws Exception {
+        boolean obj = true;
+        int objs = 7;
+        List<String> objt = new ArrayList<>();
+        objt.add("Martelo");
+        objt.add("Marreta");
+        objt.add("Machado");
+        objt.add("PC");
+        objt.add("foto da sogra");
+        if(obj){
+            System.out.println("Escolha o objeto a ser levado!");
+            for(int i = 0;i<objt.size();i++){
+                System.out.println(i + ". " + objt.get(i));
+            }
+        assertTrue("Objeto INVÁLIDO!", Agendamento.validarObj(objt,objs));
+        System.out.println("Objeto Levado: " + objt.get(objs));
+    }
+
+
+    
+}
 }
 
