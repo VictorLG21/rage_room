@@ -4,6 +4,7 @@ package rage.room;
 /* IMPORTAÇÕES */
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -17,6 +18,19 @@ public class Cliente {
 
 
     /* MÉTODOS */
+    public Cliente(String nome, String profissao, String rg, int dia, int mes, int ano) {
+        this.nome = nome;
+        this.profissao = profissao;
+        this.rg = rg;
+        this.diaNascimento = dia;
+        this.mesNascimento = mes;
+        this.anoNascimento = ano;
+    }
+
+    public String toString() {
+        return "NOME: " + nome + "\n" + "PROFISSÃO: " + profissao + "\n" + "RG: " + rg + "\n" + "DATA DE NASCIMENTO: " + diaNascimento + "/" + mesNascimento + "/" + anoNascimento;
+    }
+
     public static boolean validarIdade(int diaNascimento, int mesNascimento, int anoNascimento) {
         Date data = new Date();
         LocalDate dataLocal = data.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -59,5 +73,29 @@ public class Cliente {
         } else {
             return false;
         }
+    }
+
+    public static boolean verificarDuplicidade(String rg, ArrayList<Cliente> banco) {
+        for(Cliente jk : banco) {
+            if(!jk.toString().contains(rg)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean removerCliente(String rg, ArrayList<Cliente> banco) {
+        int index = 0;
+
+        for(Cliente jk : banco) {
+            if(jk.toString().contains(rg)) {
+                index = banco.indexOf(jk);
+                banco.remove(index);
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
