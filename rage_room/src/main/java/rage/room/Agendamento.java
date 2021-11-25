@@ -13,16 +13,22 @@ public class Agendamento {
     int ano;
 
     public Agendamento(int i, String string, boolean b, int j, int k, int l, int m) {
+        participantes = i;
+        motivo = string;
+        obj = b;
+        sala = j;
+        dia = k;
+        mes = l;
+        ano = m;
     }
     public static boolean validarData(int dia, int mes, int ano) {
         Date data = new Date();
         LocalDate dataLocal = data.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        int diaAtual = dataLocal.getDayOfMonth();
-        int mesAtual = dataLocal.getMonthValue();
+        
         int anoAtual = dataLocal.getYear();
 
 
-        if((dia >= 1 && dia <= 31) && (mes >= 1 && mes <= 12) && (anoAtual >= ano  && mesAtual - mes >= 0 && diaAtual - dia >= 0)) {
+        if((dia >= 1 && dia <= 31) && (mes >= 1 && mes <= 12) && (anoAtual <= ano )) {
             return true;
         } else {
             return false;
@@ -30,8 +36,10 @@ public class Agendamento {
     }
     public static boolean validarAgendamento(List<Agendamento> agendamentos,int dia, int mes, int ano, int sala) {
         
-        for (Agendamento agendamento : agendamentos) {
-            if(agendamento.dia == dia && agendamento.ano == ano && agendamento.mes == mes && agendamento.sala == sala){
+      for (int j = 0; j < agendamentos.size(); j++) {
+          
+       
+            if(agendamentos.get(j).dia == dia && agendamentos.get(j).ano == ano && agendamentos.get(j).mes == mes && agendamentos.get(j).sala == sala){
                 return false;
             }
         }

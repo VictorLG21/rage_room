@@ -30,10 +30,10 @@ public class AgendamentoTeste {
        agenda.add(a3);
 
         sala = 3;
-        Participantes = 5;
-        DIA = 5;
-        MES = 03;
-        ANO = 2003;
+        Participantes = 6;
+        DIA = 30;
+        MES = 11;
+        ANO = 1900;
 
 
         assertTrue("AGENDAMENTO JÁ EXISTENTE!", Agendamento.validarAgendamento(agenda, DIA, MES, ANO, sala));
